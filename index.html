@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RandomBungeeJump — Virtual Bungee Jump Everywhere</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="cipher-frame">
+    <header class="archive-header">
+      <div class="header-title-row">
+        <h1>RandomBungeeJump</h1>
+        <nav class="top-links">
+          <a href="https://swrdfgd.github.io/" target="_blank" rel="noopener">swrdfgd Hub</a>
+        </nav>
+      </div>
+      <p class="subtitle">Virtual bungee jump everywhere on Earth.</p>
+    </header>
+
+    <main class="expedition-board">
+      <div class="viewport-container">
+        <img id="gif-output" alt="Bungee Jump Animation" hidden />
+        <div id="interactive-map" hidden></div>
+
+        <div id="stage-overlay" class="stage-overlay">
+          <p id="stage-message">READY TO JUMP</p>
+          <div id="progress-wrapper" class="progress-wrapper" hidden>
+            <div class="progress-track">
+              <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            <span id="progress-text">Loading view: 0%</span>
+          </div>
+        </div>
+      </div>
+
+      <section class="control-panel">
+        <div class="cipher-readout">
+          <div class="data-row">
+            <span class="label">COORDINATES</span>
+            <span class="value" id="coord-display">--.-----°, --.-----°</span>
+          </div>
+          <div class="data-row">
+            <span class="label">LOCATION</span>
+            <span class="value" id="location-display">Press Jump Now to begin...</span>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <button id="jump-btn" class="btn-primary">
+            &#9660; JUMP NOW
+          </button>
+
+          <button id="explore-btn" class="btn-secondary" disabled>
+            Explore on Map
+          </button>
+
+          <a id="download-btn" class="btn-secondary disabled" download="random-bungee-jump.gif" aria-disabled="true">
+            Download GIF
+          </a>
+
+          <button id="share-btn" class="btn-secondary" disabled>
+            Copy Link
+          </button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gif.js@0.2.0/dist/gif.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
